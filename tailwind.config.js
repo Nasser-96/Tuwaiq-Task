@@ -63,6 +63,7 @@ module.exports = {
         staticSky:"#46B5C0",
         staticPurble:"#7A75A6",
         staticBlue:"#353DD0",
+        staticBlue2:"#3038BD",
         staticGrey:"#EEF2F8",
 
         white:"#FFFFFF"
