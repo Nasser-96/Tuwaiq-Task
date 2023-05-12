@@ -11,15 +11,17 @@ import image_pencil from "../assets/images/pencil.png";
 import burgerButton from "../assets/images/burgerButton.png";
 
 type Props = 
-{}
+{
+    isSigupPage:boolean
+}
 
-export default function Header({}: Props) 
+export default function Header(props: Props) 
 {
     const headerLogic = useHeader();
 
   return (
-    <div className={`sticky top-0 z-10 rounded-md px-4 lg:px-0 lg:mx-28 bg-white py-4 sm:mt-16 mb-10`}>
-        <div className={`flex justify-between items-center`}>
+    <div className={`sticky top-0 z-10 rounded-[20px] px-4 lg:px-0 lg:mx-28 bg-white py-4 sm:mt-16 mb-10`}>
+        <div className={`flex justify-between items-center sm:px-10`}>
             <div className={`flex items-center`}>
                 <Image
                     image={image_pencil}
@@ -36,12 +38,16 @@ export default function Header({}: Props)
                 </div>
             </div>
             <div className={`flex items-center hidden md:flex`}>
-                <Button
-                    action={headerLogic?.signup}
-                    disabled={false}
-                    style={`bg-staticBlue px-3 py-2 rounded-md text-white`}
-                    text='إنشاء حساب'
-                />
+                {
+                    !(props?.isSigupPage)
+                    &&
+                    <Button
+                        action={headerLogic?.signup}
+                        disabled={false}
+                        style={`bg-staticBlue px-3 py-2 rounded-md text-white`}
+                        text='إنشاء حساب'
+                    />
+                }
                 <div className={`px-3`}/>
                 <Button
                     action={headerLogic?.login}

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './header'
 import Footer from './footer'
+import { useLocation } from 'react-router-dom'
 
 type Props = 
 {
@@ -9,11 +10,18 @@ type Props =
 
 export default function MasterLayout({children}: Props) 
 {
+  const location = useLocation();
+  const isSigupPage = location?.pathname === "/signup";
+  
   return (
     <div dir='rtl' className={`overflow-clip bg-white w-full`}>
-        <Header/>
+        <Header isSigupPage={isSigupPage} />
             {children}
-        <Footer/>
+          {
+            !(isSigupPage)
+            &&
+              <Footer/>
+          }
     </div>
   )
 }

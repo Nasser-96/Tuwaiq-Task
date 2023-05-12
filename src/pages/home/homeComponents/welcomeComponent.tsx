@@ -83,26 +83,3 @@ export default function WelcomeComponent({}: Props)
     </div>
   )
 }
-
-
-// import React from 'react'
-
-// type Props = {}
-
-// export default function WelcomeComponent({}: Props) 
-// {
-//   return (
-//     <div className={`mx-32 bg-textWhite rounded-xl rounded-[46px]`}>
-//         <div className={`relative mx-56 bg-textWhite p-32 rounded-[46px]`}>
-//           <div className={`absolute top-40 left-0 right-0 flex flex-col items-center justify-center border border-blue1 rounded-[46px]`}>
-//             <div className={`text-staticBlue text-[62px]/[69.19px]`}>
-//               منصة تعلم
-//             </div>
-//             <div className={`text-textBlack text-[48px]/[53.57px]`}>
-//               وجهتك الأولى لكل جديد في عالم التقنية!
-//             </div>
-//           </div>
-//         </div>
-//     </div>
-//   )
-// }
