@@ -18,7 +18,7 @@ export default function Header({}: Props)
     const headerLogic = useHeader();
 
   return (
-    <div className={`sticky top-0 z-10 rounded-md px-4 lg:px-0 lg:mx-28 bg-white py-4 mt-16 mb-10`}>
+    <div className={`sticky top-0 z-10 rounded-md px-4 lg:px-0 lg:mx-28 bg-white py-4 sm:mt-16 mb-10`}>
         <div className={`flex justify-between items-center`}>
             <div className={`flex items-center`}>
                 <Image

@@ -12,7 +12,7 @@ export default function MasterLayout({children}: Props)
   return (
     <div dir='rtl' className={`overflow-clip bg-white w-full`}>
         <Header/>
-            {/* {children} */}
+            {children}
         <Footer/>
     </div>
   )

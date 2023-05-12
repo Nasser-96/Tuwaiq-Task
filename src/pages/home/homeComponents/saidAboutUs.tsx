@@ -13,44 +13,71 @@ type Props =
 
 const SaidAboutUs = (props: Props) => 
 {
-  console.log(props?.saydAboutUs);
   
   return (
-      <div className={`mt-[200px]`}>
-        <div className={`flex mx-32 items-center w-[50%]`}>
-            <div className={`border border-1 border-grey5 w-full`} />
+      <div className={`mt-[200px] flex flex-col items-center`}>
+        <div className={`flex mx-32 items-center 
+          w-full
+          lg:w-[1000px]
+          2xl:w-[1000px]
+        `}>
+            <div className={`border border-1 border-grey5 w-[50%]`} />
             <div className={`flex items-center justify-center`}>
-              <Image image={CommaBlue}/>
-              <div className={`text-[40px] mx-10 w-full`}>
+              <Image image={CommaBlue} imageStyle={` w-[200px] px-4`} />
+              <div className={`w-full text-staticYellow
+                text-[22px]
+                2xl:text-[40px] 2xl:mx-10
+              `}>
                 قالوا عنا
               </div>
             </div>
         </div>
 
-        <div className={`mt-10 mx-32`}>
+        <div className={`mt-10 mx-32 flex flex-col items-center 
+          w-full
+          lg:w-[1000px]
+          2xl:w-[1000px]
+          `}>
           {
             props?.saydAboutUs?.map((item,index)=>
             {
               return(
-                <div className={`mt-10`} key={index}>
+                <div className={`mt-10 
+                  px-6
+                  lg:px-0
+                `} key={index}>
                   <div className={`flex items-center`}>
                     <div>
                       <Image image={profileImage} imageStyle={`w-[81.43px] aspect-square rounded-full`}/>
                     </div>
                     <div className={`mx-6`}>
-                      <div className={`text-[30px]  font-extrabold text-[#361A51]`}>
+                      <div className={`font-extrabold text-[#361A51] 
+                        text-[18px]
+                        2xl:text-[30px]
+                      `}>
                         {item?.name}
                       </div>
-                      <div className={`text-[20px] font-light text-gray3`}>
+                      <div className={`font-light text-gray3
+                        text-[16px]
+                        2xl:text-[20px]
+                      `}>
                         {item?.title}
                       </div>
                     </div>
                   </div>
                   <div className={`flex items-center`}>
                     <div>
-                      <Image image={CommaYellow} divStyle={`mt-4`} imageStyle={`w-[45.84px]`}/>
+                      <Image image={CommaYellow} divStyle={`mt-4`} imageStyle={`
+                        w-[300.84px]
+                        sm:w-[100.84px]
+                        lg:w-[50.84px]
+                        2xl:w-[85.84px] 2xl:h-[46.35px]
+                      `}/>
                     </div>
-                    <div className={`text-[22px] text-gray1 ms-12 font-normal`}>
+                    <div className={`text-gray1 ms-12 font-normal 
+                        text-[18px]
+                        2xl:text-[22px]
+                        `}>
                       {item?.details}
                     </div>
                   </div>

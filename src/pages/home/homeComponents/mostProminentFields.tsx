@@ -13,12 +13,21 @@ export default function MostProminentFields(props: Props)
 {
   return (
     <div>
-        <div className={`grid grid-cols-3 gap-4 px-64 mt-[200px]`}>
+        <div className={`grid grid-cols-3 gap-4 mt-[200px]
+            px-4
+            sm:px-8
+            2xl:px-64
+        `}>
             <div className={`flex items-center w-full`}>
                 <div className={`border border-1 border-grey5 w-full`} />
                 <div className={`h-[40px] border border-l-1 border-grey5`} />
             </div>
-            <div className={`flex items-center justify-center w-full text-[48px]/[53.57px] text-staticYellow`}>
+            <div className={`flex items-center justify-center w-full text-staticYellow
+                text-[22px]
+                sm:text-[28px]
+                md:text-[36px]
+                2xl:text-[48px]/[53.57px]
+            `}>
                 ابرز المجالات
             </div>
             <div className={`flex items-center w-full`}>
