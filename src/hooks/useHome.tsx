@@ -61,5 +61,10 @@ export const useHome = ()=>
         console.log("View Courses");
     }
 
-    return { ourNew, mostProminentFieldsList , saidAboutUs, viewCourses  }
+    const subscribe = () =>
+    {
+        console.log("Subscribe");
+    }
+
+    return { ourNew, mostProminentFieldsList , saidAboutUs, viewCourses, subscribe  }
 }
