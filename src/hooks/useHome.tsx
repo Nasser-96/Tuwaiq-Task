@@ -4,6 +4,7 @@ import UILearn from '../assets/images/UILearn.png';
 import VR_Learn from '../assets/images/VR_Learn.png';
 import WebLearn from '../assets/images/WebLearn.png';
 import profileImage from '../assets/images/profileImage.png';
+import { useLocalStorage } from "./useLocalStorage";
 
 export interface ourNewObject
 {
@@ -28,9 +29,13 @@ export interface SaidAboutUsType
 
 export const useHome = ()=>
 {
+    const localStorage = useLocalStorage();
+
     const [ ourNew, setNew ] = useState<ourNewObject>({"title":"تصميم وتجربة واجهة المستخدم","sub_title":"سنتعرف في هذهِ الدورة على أساليب وطرق تصميم تجربة المستخدم وتصميم واجهة المستخدم","list":["استكشاف المشاكل التصميمية وإيجاد حلولها","التعرف على التصاميم المبدئية Low-fidelity "]});
     const [ mostProminentFieldsList , setMostProminentFieldsList ] = useState<Array<mostProminentFieldArray>>([{"title": "تصميم وتجربة واجهة المستخدم","image": "سنتعرف في هذهِ الدورة على أساليب وطرق تصميم تجربة المستخدم وتصميم واجهة المستخدم",}]);
     const [ saidAboutUs , setSaidAboutUs ] = useState<Array<SaidAboutUsType>>([{title:"UX/UI Designer",name:"محمد عبدالله",details:"هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.",image:profileImage}]);
+
+    const [ subscribeEmail , setSubscribeEmail ] = useState<string>("")
 
     useEffect(()=>
     {
@@ -63,8 +68,8 @@ export const useHome = ()=>
 
     const subscribe = () =>
     {
-        console.log("Subscribe");
+        localStorage?.set( "subscribe_email", subscribeEmail )
     }
 
-    return { ourNew, mostProminentFieldsList , saidAboutUs, viewCourses, subscribe  }
+    return { subscribeEmail, ourNew, mostProminentFieldsList , saidAboutUs, viewCourses, setSubscribeEmail, subscribe  }
 }

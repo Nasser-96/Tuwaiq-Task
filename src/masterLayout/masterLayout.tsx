@@ -5,22 +5,24 @@ import { useLocation } from 'react-router-dom'
 
 type Props = 
 {
+    scrollToourNewRef:() =>void
+    handleScrollToMostProminentFields:() =>void
     children:JSX.Element
 }
 
-export default function MasterLayout({children}: Props) 
+export default function MasterLayout(props: Props) 
 {
   const location = useLocation();
   const isSigupPage = location?.pathname === "/signup";
   
   return (
     <div dir='rtl' className={`overflow-clip bg-white w-full`}>
-        <Header isSigupPage={isSigupPage} />
-            {children}
+        <Header handleScrollToMostProminentFields={props?.handleScrollToMostProminentFields} isSigupPage={isSigupPage} scrollToourNewRef={props?.scrollToourNewRef} />
+            {props?.children}
           {
             !(isSigupPage)
             &&
-              <Footer/>
+              <Footer handleScrollToMostProminentFields={props?.handleScrollToMostProminentFields} scrollToourNewRef={props?.scrollToourNewRef}/>
           }
     </div>
   )

@@ -12,28 +12,35 @@ import burgerButton from "../assets/images/burgerButton.png";
 
 type Props = 
 {
+    scrollToourNewRef:() =>void
+    handleScrollToMostProminentFields:() =>void
     isSigupPage:boolean
+    
 }
 
 export default function Header(props: Props) 
 {
+    const navigate = useNavigate();
+    
     const headerLogic = useHeader();
 
   return (
     <div className={`sticky top-0 z-10 rounded-[20px] px-4 lg:px-0 lg:mx-28 bg-white py-4 sm:mt-16 mb-10`}>
         <div className={`flex justify-between items-center sm:px-10`}>
             <div className={`flex items-center`}>
-                <Image
-                    image={image_pencil}
-                    divStyle={`w-[85px] h-[74px]`}
-                />
+                <div className={`cursor-pointer`} onClick={() => navigate("/")}>
+                    <Image
+                        image={image_pencil}
+                        divStyle={`w-[85px] h-[74px]`}
+                    />
+                </div>
                 <div className={`hidden md:block ms-10 cursor-pointer`} onClick={headerLogic?.homePage} >
                     الرئيسية
                 </div>
-                <div className={`hidden md:block ms-10 cursor-pointer`} onClick={headerLogic?.ourNew}>
+                <div className={`hidden md:block ms-10 cursor-pointer`} onClick={() => headerLogic?.ourNew(props?.scrollToourNewRef)}>
                     جديدنا
                 </div>
-                <div className={`hidden md:block ms-10 cursor-pointer`} onClick={headerLogic?.mostProminentFields}>
+                <div className={`hidden md:block ms-10 cursor-pointer`} onClick={() => headerLogic?.mostProminentFields(props?.handleScrollToMostProminentFields)}>
                     أبرز المجالات
                 </div>
             </div>

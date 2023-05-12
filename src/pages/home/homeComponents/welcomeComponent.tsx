@@ -11,30 +11,33 @@ export default function WelcomeComponent({}: Props)
   return (
     <div className={`h-full mt-[400px]`}>
       <div className={`backdrop-blur-[50.5px] text-center z-[2] opacity-100 left-0 right-0 absolute border border-white flex flex-col items-center justify-center rounded-[46px] mt-[400px]
-          top-[-190px] py-10 mx-[70px] px-10 
+          top-[-190px] py-10 mx-[70px] px-6 
           sm:top-[-100px] sm:px-10 sm:py-10 sm:mx-[70px] 
           2xl:top-[-0px] 2xl:px-10 2xl:py-32 2xl:mx-80 
           `}>
-            <div className={`text-staticBlue2 
+            <div className={`text-staticBlue2
+            font-extrabold
               text-[32px]/[69.19px]
-              2xl:text-[62px]/[69.19px]
+              md:text-[52px]/[69.19px]
+              lg:text-[62px]/[69.19px]
             `}>
               منصة تعلّم
             </div>
             <div className={`text-textBlack
-                text-[22px]/[53.57px]
-                text-[48px]/[53.57px]
-              `}>
+                text-[22px]/[24.55px]
+                md:text-[38px]/[53.57px]
+                lg:text-[48px]/[53.57px]
+                `}>
               وجهتك الأولى لكل جديد في عالم التقنية!
             </div>
             <Image 
                 image={learnLaptop}
                 divStyle={`z-[2] h-full w-full 
                   hidden
-                  sm:relative sm:block
+                  md:relative md:block
                   sm:mx-40 sm:right-[-100px] top-[-70px]
-                  md:mx-40 md:right-[-80px] top-[-70px]
-                  lg:mx-40 lg:right-[-60px] top-[-70px]
+                  md:mx-40 md:right-[-110px] top-[-10px]
+                  lg:mx-40 lg:right-[-110px] top-[-0px]
                   xl:mx-40 xl:right-[-30px] top-[-70px]
                   2xl:mx-40 2xl:right-[-250px] top-[-70px]
                 `}
@@ -69,7 +72,7 @@ export default function WelcomeComponent({}: Props)
             image={learnLaptop}
             divStyle={`z-[2] h-full w-full 
               block
-              sm:hidden
+              md:hidden
               flex items-center justify-center
               2xl:mx-40 2xl:right-[-250px] top-[-70px]
             `}

@@ -90,3 +90,30 @@ video,
 	margin: 0;
 	padding: 0;
 }
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "Almarai";
+    src: url("./assets/fonts/Almarai-Regular.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "Cairo";
+    src: url("./assets/fonts/Cairo-Regular.ttf");
+  }
+}
+
+@layer base
+{
+  @font-face
+  {
+    font-family: "Tajawal";
+    src: url("./assets/fonts/Tajawal-Regular.ttf");
+  }
+}

@@ -14,19 +14,19 @@ export const useHeader = ()=>
         navigate('/')
     }
 
-    const ourNew = () =>
+    const ourNew = (scroll:() => void) =>
     {
-        console.log("ourNew");
+        scroll();
     }
 
-    const mostProminentFields = () =>
+    const mostProminentFields = (scroll:()=>void) =>
     {
-        console.log("mostProminentFields");
+        scroll();
     }
 
     const login = ()=>
     {
-        console.log("login");
+        navigate("/login")
     }
     return { signup, homePage, ourNew, mostProminentFields, login };
 }

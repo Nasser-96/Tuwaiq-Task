@@ -41,7 +41,7 @@ export default function MostProminentFields(props: Props)
                 return(
                         <div key={index} className='bg-textWhite mx-4 rounded-md'>
                             <Image divStyle='w-[252px] aspect-square' image={item?.image}/>
-                            <div className={`flex items-center justify-center text-[28px]`}>
+                            <div className={`flex items-center text-staticBlue p-4 font-[900] justify-center text-[20px]`}>
                                 {item?.title}
                             </div>
                         </div>

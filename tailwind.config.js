@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+// const { globalStyle } = require('../../libs/themes/src/index');
+
 module.exports = {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
@@ -68,10 +71,10 @@ module.exports = {
 
         white:"#FFFFFF"
       },
-      // fontFamily:
-      // {
-      //   courier:["Gill Sans MT"]
-      // }
+      fontFamily:
+      {
+        courier:["Almarai"]
+      }
     },
   },
   plugins: [],

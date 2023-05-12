@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import Button from '../../../components/button'
 
 type Props = 
 {
     subscribe:()=> void
+    setSubscribeEmail:(e:string)=> void
 }
 
 export default function SubscribeSection(props: Props) 
 {
+    const ref = useRef<any>(null);
+
+    const subscribeByEmail = () =>
+    {
+        ref.current.value = null;
+        props?.subscribe();
+    }
+
   return (
     <div className={`mt-[400px]`}>
         <div className='w-full flex justify-center items-end relative'>
@@ -24,7 +33,7 @@ export default function SubscribeSection(props: Props)
                         اشترك ليصلك جديدنا!
                     </div>
                     <div className={`mx-10 w-full flex justify-center`}>
-                        <input type='text' placeholder={`user@user.com`} className={`p-2 rounded-md w-full border border-[#EBECFA] bg-textWhite 
+                        <input ref={ref} type='text' placeholder={`user@user.com`} onChange={(e)=>props?.setSubscribeEmail(e.target?.value)} className={`p-2 rounded-md w-full border border-[#EBECFA] bg-textWhite 
                             mx-10
                             lg:mx-40
                             xl:mx-60
@@ -33,8 +42,8 @@ export default function SubscribeSection(props: Props)
                     </div>
                     <div className={`mt-4`}>
                         <Button
-                            action={props?.subscribe}
-                            disabled={false}
+                            action={()=> subscribeByEmail()}
+                            disabled={!(ref?.current?.value)}
                             style={`bg-staticBlue px-3 py-2 rounded-md text-white`}
                             text='اشتراك'
                         />
