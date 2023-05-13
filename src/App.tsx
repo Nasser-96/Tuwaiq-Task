@@ -12,21 +12,29 @@ import './App.scss';
 
 function App() 
 {
-  const scroll = useScroll();
 
   return (
     <div className={`font-courier`}>
       <BrowserRouter basename="/">
-          <MasterLayout handleScrollToMostProminentFields={scroll?.handleScrollToMostProminentFields} scrollToourNewRef={scroll?.handleScroll}>
+        <App2/>
+        </BrowserRouter>
+    </div>
+  );
+}
+
+const App2 =() =>
+{
+  const scroll = useScroll();
+  
+  return(
+        <MasterLayout handleScrollToMostProminentFields={scroll?.handleScrollToMostProminentFields} scrollToourNewRef={scroll?.handleScroll}>
             <Routes>
               <Route path='/' element={<Home mostProminentFieldsRef={scroll?.mostProminentFieldsRef} ourNewRef={scroll?.ourNewRef}/>}/>
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/login' element={<Login/>}/>
             </Routes>
           </MasterLayout>
-        </BrowserRouter>
-    </div>
-  );
+  )
 }
 
 export default App;
