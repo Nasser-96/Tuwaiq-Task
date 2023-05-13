@@ -8,11 +8,14 @@ export interface SignupType
     lastName:string
     email:string
     mobile:string
+    error:string
+
     setFirstName:(key:string)=> void
     setLastName:(key:string)=> void
     setEmail:(key:string)=> void
     setMobile:(key:string)=> void
     signUp:()=> void
+    setError:(key:string) => void
 }
 export const useSignup = ()=>
 {
@@ -25,6 +28,8 @@ export const useSignup = ()=>
     const [ email, setEmail ] = useState<string>("");
     const [ mobile, setMobile ] = useState<string>("");
 
+    const [ error, setError ] = useState("")
+
     const signUp = () =>
     {
         if(email.includes("gmail.com"))
@@ -36,11 +41,7 @@ export const useSignup = ()=>
 
             navigate("/")
         }
-        else
-        {
-            alert("يجب ان يحتوي البريد الالكتروني على gmail.com")
-        }
     }
 
-    return { firstName,lastName, email, mobile, setFirstName, setLastName, setEmail, setMobile, signUp };
+    return { firstName,lastName, email, mobile, error, setFirstName, setLastName, setEmail, setMobile, signUp, setError };
 }

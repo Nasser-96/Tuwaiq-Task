@@ -15,6 +15,15 @@ export default function FormComponent(props: Props)
 
     const navigate = useNavigate()
 
+    const handleEmailchange = (e:any)=>
+    {
+        if(props?.signupData?.email?.length > 0 && !(props?.signupData?.email?.includes("gmail.com")))
+        {
+            props?.signupData?.setError("يجب ان يحتوي البريد الالكتروني على gmail.com")
+        }
+        props?.signupData?.setEmail(e.target?.value)
+    }
+
     const handleChange = (event:any) => 
     {
         
@@ -69,8 +78,15 @@ export default function FormComponent(props: Props)
                     type='email' 
                     placeholder={`user@user.com`} 
                     className={`p-2 rounded-md w-full border border-[#EBECFA] bg-textWhite text-[14px] sm:text-[20px]`}
-                    onChange={(e)=>props?.signupData?.setEmail(e.target?.value)}
+                    onChange={handleEmailchange}
                 />
+                {
+                    props?.signupData?.email?.length > 0 && !(props?.signupData?.email?.includes("gmail.com"))
+                    && 
+                    <div className={`text-[15px] text-[#DB3B21]`}>
+                        {props?.signupData?.error}
+                    </div>
+                }
             </div>
             <div className={`mt-4`}>
                 <div className={`text-[20px]`}>
@@ -90,7 +106,7 @@ export default function FormComponent(props: Props)
         <div className={`flex flex-col w-full items-center justify-center my-4`}>
             <Button
                 action={props?.signupData?.signUp}
-                disabled={!(props?.signupData?.email && props?.signupData?.firstName && props?.signupData?.lastName && props?.signupData?.mobile )}
+                disabled={!((props?.signupData?.email?.includes("gmail.com")) && props?.signupData?.firstName && props?.signupData?.lastName && props?.signupData?.mobile )}
                 style={`bg-staticBlue px-3 py-2 rounded-md text-white`}
                 text='تسجيل الدخول'
             />
